@@ -1,0 +1,105 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* === Plugin styles === */
+
+// @import "~react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
+@import "~nouislider/dist/nouislider.min.css";
+@import '~react-bootstrap-typeahead/css/Typeahead.css';
+@import '~react-bootstrap-typeahead/css/Typeahead.bs5.css';
+@import '~react-datepicker/dist/react-datepicker.css';
+
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+@import "./abstracts/variables";
+@import "~compass-mixins/lib/compass";
+@import "~compass-mixins/lib/animate";
+@import "~bootstrap/scss/bootstrap";
+@import "./base/fonts";
+@import "./abstracts/functions";
+
+/* === Icon fonts === */
+@import "~@mdi/font/scss/materialdesignicons";
+
+
+/* === Template mixins === */
+@import "./abstracts/mixins";
+
+
+/* === Core Styles === */
+@import "./base/typography";
+@import "./base/reset";
+@import "./base/responsive";
+@import "./base/utilities";
+
+/* === Components === */
+
+@import "./components/widgets";
+@import "./components/forms";
+@import "./components/checkbox-radio";
+@import "./components/icons";
+@import "./components/tables";
+@import "./components/accordions";
+@import "./components/buttons";
+@import "./components/breadcrumbs";
+@import "./components/badges";
+@import "./components/cards";
+@import "./components/preview";
+@import "./components/tooltips";
+@import "./components/user-profile";
+@import "./components/popovers";
+@import "./components/lists";
+@import "./components/bootstrap-progress";
+@import "./components/bootstrap-alerts";
+@import "./components/tabs";
+@import "./components/dropdowns";
+@import "./components/pagination";
+@import "./components/loaders/loaders";
+@import "./components/timeline";
+@import "./components/portfolio";
+@import "./components/pricing-table";
+@import "./components/email/mail-list-container";
+@import "./components/email/mail-sidebar";
+@import "./components/email/message-content";
+@import "./components/todo-list";
+@import "./components/spinner";
+@import "./components/tickets";
+@import "./components/project-list";
+@import "./components/product-tile";
+@import "./components/user-listing";
+@import "./components/landing";
+@import "./components/chats";
+@import "./components/kanban";
+@import "./components/react-table";
+
+@import "./components/landing-screens/auth";
+
+/* === Plugin Overrides === */
+@import "./vendors-extensions/contex-menu";
+@import "./vendors-extensions/no-ui-slider";
+@import "./vendors-extensions/slick-carousel";
+@import "./vendors-extensions/rating";
+@import "./vendors-extensions/date-picker";
+@import "./vendors-extensions/wizard";
+@import "./vendors-extensions/react-bootstrap-table";
+@import "./vendors-extensions/sweet-alert";
+@import "./vendors-extensions/full-calendar";
+@import "./vendors-extensions/react-photo-gallery";
+@import "./vendors-extensions/react-tag-autocomplete";
+@import "./vendors-extensions/jquery-jvectormap";
+@import "./vendors-extensions/react-table";
+
+/* === Layout === */
+@import "./layout/navbar";
+@import "./layout/sidebar";
+@import "./layout/footer";
+@import "./layout/layout";
+
+
+/* === Pages === */
+@import "./pages/misc";
+@import "./pages/demo";
+@import "./pages/spinner";
+@import "./pages/dashboard";

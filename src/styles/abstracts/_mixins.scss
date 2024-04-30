@@ -1,0 +1,510 @@
+/* Animation Mixins */
+@keyframes dropdownAnimation {
+  from {
+    opacity: 0;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+  }
+}
+
+.dropdownAnimation {
+  animation-name: dropdownAnimation;
+  @include animation-duration($action-transition-duration);
+  @include animation-fill-mode(both);
+}
+@mixin transition($settings) {
+  -webkit-transition: $settings;
+  -moz-transition: $settings;
+  -ms-transition: $settings;
+  -o-transition: $settings;
+  transition: $settings;
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.fadeOut {
+  animation-name: fadeOut;
+}
+
+.infinite-spin {
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  animation-name: spin;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+//Badge Mixins
+
+//Badge vriations
+@mixin badge-variations($color) {
+	border: 1px solid $color;
+	color: $white;
+}
+// Badge outlined variations
+@mixin badge-outline-variations($color) {
+	color: $color;
+	border: 1px solid $color;
+}
+// Badge outlined variations
+@mixin badge-gradient-variations($color) {
+	background: $color;
+	color: $white;
+}
+
+// BlockQuote Mixins //
+
+@mixin blockquote($color) {
+  border-color: $color;
+  .blockquote-footer {
+    color: $color;
+  }
+}
+
+
+@mixin social-button($color) {
+  background: $color;
+  color: $white;
+
+  &:hover,
+  &:focus {
+    background: darken($color, 10%);
+    color: $white;
+  }
+  &.btn-social-icon-text {
+    padding: 0 1.5rem 0 0;
+    background: lighten($color, 10%);
+    i {
+      background: $color;
+      padding: .75rem;
+      display: inline-block;
+      margin-right: 1.5rem;
+    }
+  }
+}
+@mixin social-outline-button($color) {
+border: 1px solid $color;
+color: $color;
+&:hover {
+  background: $color;
+  color: $white;
+}
+}
+@mixin button-inverse-variant($color, $color-hover: $white) {
+  background-color: rgba($color, 0.2);
+  background-image: none;
+  border-color: rgba($color, 0);
+  &:not(.btn-inverse-light) {
+    color: $color;      
+  }
+  &:hover {
+    color: $color-hover;
+    background-color: $color;
+    border-color: $color;
+  }
+
+  &.focus,
+  &:focus {
+    box-shadow: 0 0 0 3px rgba($color, .5);
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $color;
+    background-color: transparent;
+  }
+
+  &.active,
+  &:active,
+  .show > &.dropdown-toggle {
+    color: $color-hover;
+    background-color: $color;
+    border-color: $color;
+  }
+}
+@mixin button-gradient-variant($value) {
+  background: $value;
+  border: 0;
+  &:not([disabled]):not(.disabled):active,
+  &:not([disabled]):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    background: $value;
+  }
+  &:hover {
+    opacity: .8;
+  }
+  &:not(.btn-gradient-light) {
+    color: $white;      
+    &:hover,
+    &:focus,
+    &:active {
+      color: $white;
+    }
+  }
+  @include transition(opacity .3s ease);
+}
+
+
+// Cards Mixins 
+
+@mixin card-inverse-variant($bg, $border, $color) {
+  background: $bg;
+  border: 1px solid $border;
+  color: $color;
+}
+
+
+// Color Functions Mixins
+
+// Solid tab variations
+@mixin tab-solid-variant($color) {
+  .nav-link {
+    &.active {
+      background: $color;
+    }
+  }
+}
+// Minimal tab variations
+@mixin tab-minimal-variant($color) {
+  .nav-tabs {
+    .nav-item {
+      .nav-link {
+        &.active {
+          color: $color;
+        }
+      }
+    }
+  }
+}
+// Sider color variations
+@mixin slider-color-variant($color) {
+  .noUi-base {
+    .noUi-connect {
+      background: $color;
+    }
+
+    .noUi-origin {
+      background: $color;
+
+      .noUi-handle {
+        &:after {
+          background: $color;
+        }
+
+        .noUi-tooltip {
+          background: $color;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+// Breadcrumb color variations
+@mixin breadcrumb-inverse-variant($color) {
+  background: lighten($color, 25%);
+  border-color: $color;
+
+  .breadcrumb-item {
+    color: $color;
+
+    &:before {
+      color: inherit;
+    }
+
+    a {
+      color: inherit;
+    }
+  }
+
+  &.breadcrumb-custom {
+    background: transparent;
+
+    .breadcrumb-item {
+      background: lighten($color, 25%);
+
+      a {
+        color: $color;
+        border: none;
+
+        &:before {
+          border-left-color: lighten($color, 25%);
+        }
+      }
+
+      span {
+        color: $color;
+      }
+
+      &:last-child {
+        background: transparent;
+      }
+    }
+  }
+}
+// Pagination variations
+@mixin pagination-variants($color) {
+  .page-item {
+    &.active {
+      .page-link {
+        background: $color;
+        border-color: $color;
+      }
+    }
+
+    .page-link {
+      &:hover {
+        background: lighten($color,5%);
+        border-color: $color;
+        color: $white;
+      }
+    }
+  }
+}
+// Accordion Inverse variations
+@mixin accordion-inverse-variant($color) {
+  .card {
+    background: rgba($color, 0.16);
+    color: $color;
+    border: none;
+
+    .card-header {
+      color: $color;
+      border: none;
+
+      a,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      span {
+        color: $color;
+      }
+
+      a {
+        border-color: $color;
+
+        &:before {
+          color: $color;
+        }
+
+        &[aria-expanded="true"] {
+          border-bottom: 1px solid rgba($color, 0.16);
+        }
+
+        &[aria-expanded="false"] {
+          border-bottom: 1px solid transparent;
+        }
+      }
+    }
+  }
+}
+
+/* Miscellaneous Mixins */
+
+// general transform
+@mixin transform($transforms) {
+	-moz-transform: $transforms;
+	  -o-transform: $transforms;
+	 -ms-transform: $transforms;
+ -webkit-transform: $transforms;
+	   transform: $transforms;
+}
+
+// rotate
+@mixin rotate ($deg) {
+@include transform(rotate(#{$deg}deg));
+}
+
+// scale
+@mixin scale($scale) {
+  @include transform(scale($scale));
+}
+// translate
+@mixin translate ($x, $y) {
+@include transform(translate($x, $y));
+}
+// skew
+@mixin skew ($x, $y) {
+@include transform(skew(#{$x}deg, #{$y}deg));
+}
+//transform origin
+@mixin transform-origin ($origin) {
+ moz-transform-origin: $origin;
+	  -o-transform-origin: $origin;
+	 -ms-transform-origin: $origin;
+ -webkit-transform-origin: $origin;
+	   transform-origin: $origin;
+}
+//Ellipsis
+%ellipsor{
+	text-overflow: ellipsis;
+	overflow: hidden;
+	max-width:100%;
+	white-space: nowrap;
+}
+
+@mixin ellipsor {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+// Placeholder
+@mixin placeholder {
+ &::-webkit-input-placeholder {
+	 @content
+ }
+ &:-moz-placeholder {
+	 @content
+ }
+ &::-moz-placeholder {
+	 @content
+ }
+ &:-ms-input-placeholder {
+	 @content
+ }
+}
+
+
+// Sider color variations
+@mixin slider-color-variant($color) {
+	.noUi-base {
+		.noUi-connect {
+			background: $color;
+		}
+
+		.noUi-origin {
+			background: $color;
+
+			.noUi-handle {
+				&:after {
+					background: $color;
+				}
+
+				.noUi-tooltip {
+					background: $color;
+					color: $white;
+				}
+			}
+		}
+	}
+}
+
+// popover color variations //
+
+@mixin popover-variant($color) {
+	border-color: $color;
+	.popover-header {
+		background: theme-gradient-color($color);
+		color: $white;
+		border-bottom: 0;
+	}
+	&.bs-popover-top {
+		.arrow {
+			&:before,
+			&:after {
+				border-top-color: theme-color($color);
+			}
+		}
+	}
+	&.bs-popover-right {
+		.arrow {
+			&:before,
+			&:after {
+				border-right-color: theme-color($color);
+			}
+		}
+	}
+	&.bs-popover-bottom {
+		.arrow {
+			&:before,
+			&:after {
+				border-bottom-color: theme-color($color);
+			}
+		}
+	}
+	&.bs-popover-left {
+		.arrow {
+			&:before,
+			&:after {
+				border-left-color: theme-color($color);
+			}
+		}
+	}
+}
+
+
+// Tooltip color  variations
+
+@mixin tooltip-variant($color) {
+	.tooltip-inner {
+		background:  theme-gradient-color($color);
+		color: $white;
+	}
+	&.bs-tooltip-top {
+    .arrow::before {
+      border-top-color: theme-color($color);
+    }
+  }
+  &.bs-tooltip-right {
+    .arrow::before {
+      border-right-color: theme-color($color);
+    }
+  }
+  &.bs-tooltip-bottom {
+    .arrow::before {
+      border-bottom-color: theme-color($color);
+    }
+  }
+  &.bs-tooltip-left {
+    .arrow::before {
+      border-left-color: theme-color($color);
+    }
+  }
+}
