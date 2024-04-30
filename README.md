@@ -32,12 +32,14 @@ export default {
 
 node: 19.0.0
 # Project structure
+```
 ├── src
 │   ├── assets (images, css files, font files, etc…)
 │   ├── components
 │   ├── contexts (React context files)
 │   ├── helpers (utilities functions)
 │   ├── hooks
+│   ├── constants
 │   ├── layouts
 │   ├── pages
 │   ├── services (code for interface with any API)
@@ -55,3 +57,4 @@ node: 19.0.0
 │   ├── types (interfaces, types)
 ├── public
 │   ├── translations
+```
