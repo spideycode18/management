@@ -4,9 +4,11 @@ import logo from '../assets/images/logo.svg'
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider';
 import { ROLE_IDS } from '../constants/Permissions';
+import { useTranslation } from 'react-i18next';
 
 const Login: FunctionComponent = () => {
   const navigate = useNavigate();
+  const {t} = useTranslation();
   const location = useLocation();
   const auth = useContext(AuthContext);
   const from = location.state?.from?.pathname || "/";
@@ -34,14 +36,14 @@ const Login: FunctionComponent = () => {
               <div className="brand-logo">
                 <img src={logo} alt="logo" />
               </div>
-              <h4>Hello! let's get started</h4>
-              <h6 className="font-weight-light">Sign in to continue.</h6>
+              <h4>{t('LOGIN.GREETING')}</h4>
+              <h6 className="font-weight-light">{t('LOGIN.CONTINUE')}</h6>
               <Form className="pt-3" onSubmit={handleSubmit}>
                 <Form.Select size="lg" name='username'>
                   {Object.keys(ROLE_IDS).map((item: string) => <option key={item} value={item}>{item}</option>)}
                 </Form.Select>
                 <div className="mt-3">
-                  <button className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn w-100 me-0">SIGN IN</button>
+                  <button className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn w-100 me-0">{t('COMMON.SIGN_IN')}</button>
                 </div>
               </Form>
             </div>
