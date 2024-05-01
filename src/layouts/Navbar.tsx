@@ -1,10 +1,11 @@
 import { FunctionComponent } from 'react'
 import { Dropdown } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
-import reactLogo from '../assets/images/react.svg'
 import face1 from '../assets/images/faces/face1.jpg'
 import face3 from '../assets/images/faces/face3.jpg'
 import face4 from '../assets/images/faces/face4.jpg'
+import logo from '../assets/images/logo.svg'
+import miniLogo from '../assets/images/logo-mini.svg'
 
 
 const Navbar: FunctionComponent = () => {
@@ -14,8 +15,8 @@ const Navbar: FunctionComponent = () => {
   return (
     <nav className="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div className="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        {/* <Link className="navbar-brand brand-logo" to="/"><img src={require('../../assets/images/logo.svg')} alt="logo" /></Link>
-        <Link className="navbar-brand brand-logo-mini" to="/"><img src={require('../../assets/images/logo-mini.svg')} alt="logo" /></Link> */}
+        <Link className="navbar-brand brand-logo" to="/"><img src={logo} alt="logo" /></Link>
+        <Link className="navbar-brand brand-logo-mini" to="/"><img src={miniLogo} alt="logo" /></Link>
       </div>
       <div className="navbar-menu-wrapper d-flex align-items-stretch">
         <button className="navbar-toggler navbar-toggler align-self-center" type="button" onClick={ () => document.body.classList.toggle('sidebar-icon-only') }>
