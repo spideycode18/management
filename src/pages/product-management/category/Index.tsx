@@ -1,13 +1,13 @@
 import { FunctionComponent } from 'react'
-import { Link } from 'react-router-dom'
+import { withPermission } from '../../../components/HOCs/withPermission'
+import { PERMISSIONS_RESOURCE } from '../../../constants/Permissions'
 
 const Categories: FunctionComponent = () => {
   return (
     <div>
       Categories
-      <Link className="navbar-brand brand-logo" to="/">Home</Link>
     </div>
   )
 }
 
-export default Categories
+export default withPermission(Categories, {resource: PERMISSIONS_RESOURCE.CATEGORIES})

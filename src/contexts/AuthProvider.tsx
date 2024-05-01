@@ -8,7 +8,6 @@ export let AuthContext = createContext<AuthContextType>(null!);
 export function RequireAuth({ children }: { children: JSX.Element }) {
   let auth = useContext(AuthContext);
   let location = useLocation();
-
   if (!auth.user) {
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
