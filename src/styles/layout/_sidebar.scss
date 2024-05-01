@@ -69,7 +69,7 @@
             }
             color: $sidebar-light-menu-arrow-color;
             &:before{
-              content: "\f141";
+              content: "\F0141";
               font-size: inherit;
               color: inherit;
               .rtl & {
@@ -199,7 +199,7 @@
           height: auto;
           border-top: 0;
           &:before {
-            content: "\F054";
+            content: "\F0054";
             font-family: "Material Design Icons";
             display: block;
             position: absolute;
