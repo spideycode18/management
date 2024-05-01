@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, useContext } from 'react'
 import { Dropdown } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import face1 from '../assets/images/faces/face1.jpg'
@@ -6,9 +6,11 @@ import face3 from '../assets/images/faces/face3.jpg'
 import face4 from '../assets/images/faces/face4.jpg'
 import logo from '../assets/images/logo.svg'
 import miniLogo from '../assets/images/logo-mini.svg'
+import { AuthContext } from '../contexts/AuthProvider';
 
 
 const Navbar: FunctionComponent = () => {
+  const auth = useContext(AuthContext);
   const toggleOffcanvas = () => {
     document.querySelector('.sidebar-offcanvas')?.classList.toggle('active');
   }
@@ -31,7 +33,7 @@ const Navbar: FunctionComponent = () => {
                   <span className="availability-status online"></span>
                 </div>
                 <div className="nav-profile-text">
-                  <p className="mb-1 text-black">David Greymaax</p>
+                  <p className="mb-1 text-black">{ auth && auth.user}</p>
                 </div>
               </Dropdown.Toggle>
 

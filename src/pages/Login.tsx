@@ -3,6 +3,7 @@ import { Form } from 'react-bootstrap'
 import logo from '../assets/images/logo.svg'
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider';
+import { ROLE_IDS } from '../constants/Permissions';
 
 const Login: FunctionComponent = () => {
   const navigate = useNavigate();
@@ -36,9 +37,9 @@ const Login: FunctionComponent = () => {
               <h4>Hello! let's get started</h4>
               <h6 className="font-weight-light">Sign in to continue.</h6>
               <Form className="pt-3" onSubmit={handleSubmit}>
-                <Form.Group className="d-flex search-field form-group">
-                  <Form.Control placeholder="Username" name="username" size="lg" className="h-auto" />
-                </Form.Group>
+                <Form.Select size="lg" name='username'>
+                  {Object.keys(ROLE_IDS).map((item: string) => <option key={item} value={item}>{item}</option>)}
+                </Form.Select>
                 <div className="mt-3">
                   <button className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn w-100 me-0">SIGN IN</button>
                 </div>
