@@ -1,0 +1,9 @@
+{
+  "COMMON": {
+    "SIGN_IN": "Đăng nhập"
+  },
+  "LOGIN": {
+    "GREETING": "Xin chào! Chúng ta hãy bắt đầu nào",
+    "CONTINUE": "Đăng nhập để tiếp tục."
+  }
+}

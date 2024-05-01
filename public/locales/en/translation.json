@@ -1,0 +1,9 @@
+{
+  "COMMON": {
+    "SIGN_IN": "Sign in"
+  },
+  "LOGIN": {
+    "GREETING": "Hello! let's get started",
+    "CONTINUE": "Sign in to continue."
+  }
+}

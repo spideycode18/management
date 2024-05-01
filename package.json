@@ -16,6 +16,8 @@
     "bootstrap": "^5.0.2",
     "compass-mixins": "^0.12.12",
     "fad-react-bootstrap-table-next": "^4.0.5",
+    "i18next": "^23.11.3",
+    "i18next-http-backend": "^2.5.1",
     "lodash": "^4.17.21",
     "node-sass": "^9.0.0",
     "nouislider": "^15.7.1",
@@ -26,6 +28,7 @@
     "react-bootstrap-typeahead": "^6.3.2",
     "react-datepicker": "^6.9.0",
     "react-dom": "^18.2.0",
+    "react-i18next": "^14.1.1",
     "react-router-dom": "^6.23.0",
     "react-table": "^7.8.0"
   },
